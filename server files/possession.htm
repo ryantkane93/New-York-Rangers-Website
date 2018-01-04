@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+<title>Corsi and Fenwick Possession Statistics</title>
+
+<!--
+	Final Project
+	Ryan Kane
+	December 1st, 2015
+-->
+
+<link href="styles.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<style type="text/css">
+
+/* header */
+header{
+	text-align: center;
+	background-color: black;
+	border: 3px dashed red;
+}
+
+header h1{
+	font-family: "Arial Black",Gadget,sans-serif;
+	color: red;
+	font-size: 2.3em;
+}
+
+#main h3{
+	color: red;
+	bottom-border: 2px dashed blue;
+	text-decoration: underline;
+	font-size: 1.3em;
+}
+
+ol{
+	text-indent: 0em;
+	font-style:italic;
+	line-height: 2em;
+	font-size: 1em;
+}
+
+aside {    
+	width: 210px;	
+	padding: 10px;
+	color: black;
+    background-color: red;
+    float: right;
+}
+
+aside h3{
+	color: black;
+}
+
+#main h2 {
+    border-bottom: 2px dashed red;
+    padding-bottom: 10px;
+	text-align: center;
+	font-weight: bold;
+	font-variant: small-caps;
+	color: blue;
+}	
+	
+#main img{
+	float: right;
+	padding: 5px;
+}
+</style>
+
+</head>
+  
+<body>
+
+<section id="container">
+<header>
+<p><img src="images/hockey_rink.jpg" alt="hockey rink" title = "Hockey Rink Diagram" width="700" height="254" /></p>
+<h1>Puck Possession Statistics - Corsi and Fenwick</h1>
+</header>
+<div id = "nav" class="nav">   
+   <p>
+	<a href = "#Introduction">Introduction to Possession</a>
+	| <a href = "#Stats">Corsi and Fenwick</a>
+	| <a href = "#Variations">Variations</a>
+   </p>
+</div>
+   
+<article id="main">
+<section id = "Introduction">
+<h2>Introduction to Possession</h2>
+<p>Any viewer who has watched enough hockey games can often sense when one team on the ice is dictating play or is about to score a goal. Most people often pass this observation off as a a hunch or feeling that is developed from being around the game.
+However, what many people fail to realize is that this is actually an intuitive response to recognizing that one team is dominating puck possession. Logically speaking, when a team possesses the puck for a longer period of time they are likely to score more goals than the other team. As we all know, the puck 
+doesn't magically go from being possessed to ending up in the back of the other team's net. For this reason, stats such as time of possession, which measures how a long a team holds the puck in the attacking zone, is often misleading as an indicator of success.</p>
+
+<p>In order to score, the team has to not only possess the puck, but translate it into a shot. Traditionally, the amount of shots that a team generates is recorded as a statistic called shots on goal. It is important to note that this value simply measures how many times the goalie has to make a save on a shot attempt or a goal is scored. This means that a puck that whistles wide of the net, 
+hits the post/crossbar or is blocked by an opposing player does not count as a shot on goal on the box score. A team that controls the puck for ten minutes but manages to hit five pucks off of the crossbar will ultimately sport a shots on goal total lower than a team that takes two wristshots from the blue line that are easily saved by the goalie. For this reason, shots on goal is often a misleading value when it comes to understanding 
+exactly how much offense one team is generating compared to the other.</p>
+
+<p>There truly is no single traditional statistic that can help us measure how well a team possesses the puck and correspondingly generates scoring chances. But we know that puck possession is indicative of success, right? We have seen the Detroit Red Wings win numerous championships and arise as the 
+most successful U.S. hockey organization by implementing a system that assures that they have the puck longer than their opponent. Our eyes tell us that possession is key to winning, yet there are no statistics that can give us numbers that provide
+tangible evidence. While advanced stats are not perfect, the advent of Corsi and Fenwick has brought us a step closer to having these measurable values.</p>
+
+</section>
+
+<section id = "Stats">
+<h2> What is Corsi/Fenwick?</h2>
+
+<p>Simply put, Corsi and Fenwick are statistics that allows us to measure how many shot attempts both a team and individual players take throughout the course of a game. Before jumping into the details, 
+it is important to note that Corsi and Fenwick are extremely familiar in which aspects of the game they measure.</p>
+
+<h3>Corsi</h3>
+<p>
+		<a href = "https://en.wikipedia.org/wiki/Jim_Corsi_%28ice_hockey%29"
+	     title = "Jim Corsi Wikipedia Page">
+		<img src = "images/jim_corsi.jpg" alt = "Jim Corsi" title = "Jim Corsi" width="213" height="250" /></a>
+	
+</p>
+
+<p>Corsi was invented by Buffalo Sabre's goaltending coach Jim Corsi as an attempt to truly measure how much activity his goaltenders were facing in game. 
+Mr. Corsi's philosophy was that any shot attempt, whether it was shot wide, was a goal, hit off the post/crossbar, was blocked by another player or was saved, required some level of action from the goalie. In addition, such shot attempts provided evidence that a team was generating offensive scoring opportunities. Corsi is thought of like plus/minus, where a team (and each player on the ice) is given a point for being on the rink while a shot attempt is generated. Similarly, a team and the players on the ice lose a point from its Corsi value when the other team attempts a shot. This makes it a statistic that is 
+a pretty good measure of puck possession and how much time a team or player is spending in each end of the ice. Corsi values are kept for the entire team as well as individual players. Any time a shot attempt is generated for or against, the corresponding adjustment is made to a team's Corsi value. Similarly, any time a player is on the ice for a shot for/against, their individual Corsi value is adjusted as well. A player or team with a high Corsi is going to be spending more time in the offensive zone on the attack, while a player with a negative Corsi value is going to find himself playing defense more frequently. At the end of the day the statistic is not perfect. When it comes to individual players, a players usage and his role needs to be taken into account. A player that is put into defensive roles (starting most of his shifts in the defensive zone and against better competition) is probably going to see his Corsi numbers take a hit, especially when compared to a player that plays softer minutes (more offensive zone starts against weaker competition). 
+There are variations to the statistic that may paint a more accurate picture. The details of these variants are discussed extensively in the proceeding section.</p> 
+
+<h3>Fenwick</h3>
+<p>Fenwick intends the measure the exact same elements of the game that Corsi does. The value also represents a plus/minus value for each team and player based off of shot attempts. The only difference is that blocked shots are not considered a shot attempt. The reasoning is that blocking a shot is a skilled play that usually results in no scoring chance for the opposing team. Thus, when we are attempting to measure how much offense a team is generating,
+a blocked shot is not indicative of a true scoring chance. While it is only slightly different in philosophy from Corsi, there are situations where Fenwick may be more applicable. For instance, defensemen often have to shoot the puck through a maze of players who are trying to block it. If you are attempting to compare the offensive ability of two defensemen, one will find Fenwick to be more accurate as a higher value will show their ability to work the puck through traffic and towards the net. </p>
+
+<h3>Corsi and Fenwick as Percentage Values</h3>
+<p>Once one understands that Corsi/Fenwick is viewed as a plus/minus number, it opens up a world of opportunities for new interpretations. Often, possession metrics will be listed as a percentage such as Corsi % for easier reading. This value measures how much of the offense is generated relative to the amount of Corsi events that took place in the game. The percentage is generated using the Corsi for value for an entire game and/or an individual player. 
+Corsi for measures the number of shot attempts a player or team makes without reducing the value for shot attempts against. As one can deduce, Corsi against therefore strictly counts the number of shot attempts made by the other team. By dividing the Corsi for value of an individual by the the Corsi for value for an entire team we can therefore understand how much of the offense relies on that player (Relative Corsi %). For example, if Alexander Ovechkin generates a Corsi for value of 22 in a game and his team's Corsi for value is 44, he would have a Relative Corsi % of .50 or 50%. Relative Corsi is discussed in detail in the following section of this web page. Similarly, we can do the calculation for an entire team. If there were 60 total shot attempts in a game and one team generated 40 of them, we can conclude that their Corsi percentage for that game is ~67%.
+A vast majority of Corsi-based statistics are listed as percentage values which makes comprehending this idea important if one wishes to understand the essentials of advanced statistics.</p>
+</section>
+
+<section id = "Variations">
+<h2>Variations of Corsi and Fenwick</h2>
+<h3>Game Situations</h3>
+<p>Shows the possession metrics of players and teams in different situations of the game. Statisticians have found that possession changes based on whether the team is trailing, tied or leading in a game. By viewing Corsi and Fenwick numbers during such situations, we can see how the score of a game ultimately effects offensive and defensive performance.</p> 
+
+<p>The situations measured by these stats are as follows: </p>
+<ol>
+<li>Corsi/Fenwick Trailing - Values are measured only when the team is losing by two or more goals.</li> 
+<li>Corsi/Fenwick Close - Values are measured only when the team is either winning or losing by a single a goal.</li>
+<li>Corsi/Fenwick Tied - Values are measured only when the team is playing in a tied game.</li>  
+<li>Corsi/Fenwick Leading - Values are measured only when the team is winning by two or more goals.</li> 
+</ol>
+<h3>Assessing Players on Equal Grounds</h3>
+<p>Besides the score of a game, there are many other variables that can affect possession. The quality of a player's teammates, the quality of the players they play against and even the overall performance of their team must be considered to make an accurate assessment. There are variants of Corsi and Fenwick that attempt to explain how such variables influence possession. The following are the most prevalent examples:</p>
+
+<ol>
+<li>Relative Corsi (Rel Corsi) - Found by subtracting a player's on ice Corsi% from the team Corsi% when he isn't on the ice. Shows how many shot attempts a player produces relative to the production of the rest of the team.</li>
+<li>Corsi Competition (Corsi Competition %) - Considers how well the opposition players perform. Players who play the most are often the best producers and are therefore considered more skilled. A player who plays against opposition with high time on ice values will be judged less harshly than those whose competition are players with low time on ice values. In a similar manner, if a player generates many shot attempts against inferior opponents, their Corsi Competition % will be lower than a player who generates the same number of shot attempts against superior opponents. This allows for each player to be viewed on an even playing field. 
+<li>Relative Corsi Quality of Competition (QoC) - Helps measure how good the opposing competition a player faces is relative to his teammates. This is done by comparing the ice time-weighted average of a player's opponents' Corsi number (Corsi Competition) relative to the ice time-weighted average of a player's teammates' Corsi numbers (Relative Corsi).</li> 
+The result is usually a percentage that represents the number of shot attempts that a player directed at the opposing net relative to his teammates if they played against equal competition. In other words, it shows how many shot attempts a player produces relative to his teammates while taking the quality of the opposition into account.</li>
+</ol>
+
+</article> <!-- end main -->
+<div id = "aside" class = "center">
+<aside>
+<h3>Website Navigation</h3>
+<p>
+<a href="index.htm">Website Home Page</a>
+</p>
+<p>
+<a href="possession.htm">Corsi and Fenwick</a>
+</p>
+<p>
+<a href="other_stats.htm">Overview of Other Statistics</a>
+</p>
+
+<h3>Statistics Websites</h3>
+<p>
+<a href="http://war-on-ice.com/">War On Ice</a>
+</p>
+
+<p>
+<a href="http://stats.hockeyanalysis.com/">Hockey Analysis</a>
+</p>
+
+<p>
+<a href="http://www.behindthenet.ca/">Behind the Net</a>
+</p>
+
+<p>
+<a href="http://www.puckalytics.com/">Puck Analytics</a>
+</p>
+
+<p>
+<a href="http://www.hockeydb.com/">Hockey Database</a>
+</p>
+
+<p>
+<a href="http://www.hockey-reference.com/">Hockey Reference</a>
+</p>
+
+<p>
+<a href="http://www.nhl.com/stats/?navid=nav-sts-main#">NHL Website's Stats</a>
+</p>
+
+<p>
+<a href="http://somekindofninja.com/nhl/">SomeKindofNinja Chart Generator</a>
+</p>
+
+<p>
+<a href="http://www.sportingcharts.com/nhl/">NHL SportingCharts</a>
+</p>
+</aside> <!-- end sidebar -->
+</div>
+<footer>
+<p>New York Rangers Advanced Statistics &bull; Written by: Ryan Kane &bull; Created December 2015
+
+</section> <!-- end container -->
+
+</body>
+</html>

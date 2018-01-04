@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+<title>Overview of Other Advanced Statistics</title>
+
+<!--
+	Final Project
+	Ryan Kane
+	December 1st, 2015
+-->
+
+<link href="styles.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<style type="text/css">
+
+#main a:link{
+	color: red;
+}
+/* header */
+header{
+	text-align: center;
+	background-color: black;
+	border: 3px solid white;
+}
+
+header h1{
+	font-family: "Arial Black",Gadget,sans-serif;
+	color: blue;
+	font-size: 2.3em;
+}
+
+aside {    
+	width: 210px;	
+	padding: 10px;
+	color: white;
+    background-color: red;
+    float: right;
+}
+
+aside h3{
+	color: black;
+	text-align: center;
+}
+
+table, th, td {
+	border: 2px solid red;
+	border-collapse: collapse;
+	color: white;
+    background-color: blue;
+    font-weight: bold;
+    padding: 4px;
+	text-align: center;
+    vertical-align: center;
+}
+
+</style>
+
+</head>
+  
+<body>
+
+<section id="container">
+<header>
+<p><img src="images/hockey_rink.jpg" alt="hockey rink" title = "Hockey Rink Diagram" width="700" height="254" /></p>
+<h1>Overview of Other Advanced Statistics</h1>
+</header>
+
+<article id="main">
+<p>The reality of advanced hockeys statistics is that Corsi and Fenwick only paint part of the picture. There are dozens, if not hundreds of variables over the course of a game that can impact possession as well as the overall success of a team.
+With this in mind, it is important to note that in order to truly understand the performance of a player or team, other statistics must be considered as well. As one could imagine, with so many variables to measure, the number of advanced statistics 
+spans well beyond those presented on this page. From my experiences, these are some of the most referenced advanced stats that are relatively simple to understand.</p>
+
+<p>Unfamiliar with what Corsi/Fenwick is? Check out the <a href="possession.htm">Corsi and Fenwick</a> section of the website to learn more!</p>
+<table title="Advanced Statistics Overview">
+
+<tr>
+<th><em>Statistic Name</em></th>
+<th><em>Traditional Statistics Involved</em></th>
+<th><em>What it measures</em></th>
+<th><em>Relevance</em></th>
+</tr>
+
+<tr>
+<td>PDO</td>
+<td>Shooting Percentage and Save Percentage</td>
+<td>How much more (or less) often a shot for goes in than a shot against - Measures luck</td>
+<td>The average PDO value is 100. A player with a PDO above 102 is probably not as good as they seem, while any player or team below 98 probably is not as bad as they seem.</td>
+</tr>
+
+<tr>
+<td>Zone Starts</td>
+<td>None</td>
+<td>Ratio between offensive zone faceoffs to defensive zone faceoffs at even strength</td>
+<td>Players with a high zone start ratio start in the offensive zone more often and have inflated Corsi/Fenwick totals. Players who have a low value start in the defensive zone more often and therefore have their Corsi/Fenwick totals deflated.</td>
+</tr>
+
+<tr>
+<td>Adjusted Save Percentage (SV%+)</td>
+<td>Save Percentage, Goals Allowed and Shots Against</td>
+<td>Percentage of shots a goalie is saving relative to the league average</td>
+<td>The league average save percentage is valued at a 100. Goalies above 100 are above average while those beneath are below average. Measures the difference between the number goals allowed by a goaltender relative to what an average goalie would allow if faced with the same number of shots (GSAA). </td>
+</tr>
+
+<tr>
+<td>Individual Points Percentage (IPP)</td>
+<td>Points and Goals For</td>
+<td>The percentage of the team's goals that a particular player scored or assisted on. </td>
+<td>Shows us exactly how reliant an offense is on the production of a particular player. A player with a higher IPP will be responsible for either scoring or assisting more of/on a higher quantity of the team's goals.</td>
+</tr>
+</table>
+
+<br>
+<p>How effective are these very specific stats at predicting play performance? Take a look for yourself! The following is a chart that compares SV%+ and its corresponding GSAA values alongside the traditional SV% statistic found in box scores: </p>
+<img src="images/svpercentage.JPG" alt="SV%+ Chart" title = "SV%+ Chart" width = "630" height = "249"/>
+<p>All credit for the chart and calculations goes to broadstreethockey. The original article containing this chart can be found <a href = "http://www.broadstreethockey.com/2013/4/29/4280910/nhl-goalie-stats-2013-adjusted-save-percentage" title = "Broadstreet Hockey Article" alt = "Broadstreet Hockey Article">here</a>.</p>
+</article> <!-- end main -->
+
+<div id= "aside" class="center">
+<aside>
+<h3>Website Navigation</h3>
+<p>
+<a href="index.htm">Website Home Page</a>
+</p>
+<p>
+<a href="possession.htm">Corsi and Fenwick</a>
+</p>
+<p>
+<a href="other_stats.htm">Overview of Other Statistics</a>
+</p>
+
+<h3>Statistics Websites</h3>
+<p>
+<a href="http://war-on-ice.com/">War On Ice</a>
+</p>
+
+<p>
+<a href="http://stats.hockeyanalysis.com/">Hockey Analysis</a>
+</p>
+
+<p>
+<a href="http://www.behindthenet.ca/">Behind the Net</a>
+</p>
+
+<p>
+<a href="http://www.puckalytics.com/">Puck Analytics</a>
+</p>
+
+<p>
+<a href="http://www.hockeydb.com/">Hockey Database</a>
+</p>
+
+<p>
+<a href="http://www.hockey-reference.com/">Hockey Reference</a>
+</p>
+
+<p>
+<a href="http://www.nhl.com/stats/?navid=nav-sts-main#">NHL Website's Stats</a>
+</p>
+
+<p>
+<a href="http://somekindofninja.com/nhl/">SomeKindofNinja Chart Generator</a>
+</p>
+
+<p>
+<a href="http://www.sportingcharts.com/nhl/">NHL SportingCharts</a>
+</p>
+</aside> <!-- end sidebar -->
+</div>
+
+<footer>
+<p>New York Rangers Advanced Statistics &bull; Written by: Ryan Kane &bull; Created December 2015
+
+</section> <!-- end container -->
+
+</body>
+</html>

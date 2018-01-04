@@ -1,0 +1,6 @@
+rowid,lastname,firstname,role,userid,password,status
+1,Kane,Ryan,admin,rkane,letmein123,1
+2,Doe,John,admin,jdoe,johndoe1,1
+3,Hackenburg,Christian,member,chackenburg,chrisitianhackenburg1,1
+4,Gallo,Ralph,admin,rgallo,ralphgallo1,1
+5,Glass,Tanner,member,tglass,tannerglass1,1
